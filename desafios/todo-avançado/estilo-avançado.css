@@ -6,14 +6,22 @@ body{
     background-size: cover;
 }
 
-header{
+.header{
+    width: 500px;
     background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin: auto auto -16px auto;
+    text-align: center;
 }
 
-main{
+section{
+    width: 500px;
     background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: auto;
 }
-
 
 label{
     font-weight: bold;
@@ -21,4 +29,46 @@ label{
 
 p{
     font-weight: bold;
+}
+
+.adicione-tarefa{
+    padding: 15px;
+}
+
+.editar-tarefa{
+    padding: 15px;
+}
+
+.botao-cancelar{
+    margin-top: 20px;
+}
+
+.pesquisar-filtrar{
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.linha-pesquisar-filtrar{
+    height: 45px;
+    border-left: 2px solid;
+}
+
+.tarefa-filho{
+    justify-content: space-between;
+    padding-top: 25px;
+}
+/* background-color: rgb(57, 82, 105); */
+
+.tarefa-feita-pai{
+    background-color: rgb(57, 82, 105);
+}
+
+.tarefa-feita p{
+    color: white;
+    text-decoration: line-through;
+}
+
+button:hover{
+    background-color: rgba(57, 82, 105, 0.755);
+    transition: 2s;
 }

@@ -1,96 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="estilo-avançado.css">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- JAVASCRIPT -->
+    <script src="script.js" defer></script>
     <title>Todo Avançado</title>
 </head>
+
 <body>
 
     <header>
-        <h1>Todo Avançado</h1>
-        <hr>
+        <div class="header">
+            <h1>Todo Avançado</h1>
+            <hr>
+        </div>
     </header>
 
     <main>
         <section>
 
-            <div class="adicione-tarefa">
-
-                <form class="formulario-adicionar-tarefa">
-                    <label for="itarefa">Adicione Sua tarefa:</label> <br>
-                    <input type="text" name="tarefa" id="itarefa" placeholder="O que você vai fazer?">
-                    <button type="submit"><i class="fa-thin fa-plus"></i></button>
-                </form>
-
-            </div>
-
-            <hr>
-
-            <div class="pesquisar-filtrar">
-                <div class="pesquisar">
-
-                    <form class="formulario-pesquisar">
-                        <label for="ipesquisar">Pesquisar:</label> <br>
-                        <input type="text" name="buscar" id="ibuscar" placeholder="Buscar...">
-                        <button type="submit"><i class="fa-solid fa-delete-left"></i></button>
+            <div class="container-xl">
+                <div class="adicione-tarefa">
+                    <form class="formulario-adicionar-tarefa">
+                        <label for="itarefa">Adicione Sua tarefa:</label> <br>
+                        <input type="text" name="tarefa" id="itarefa" placeholder="O que você vai fazer?">
+                        <button type="submit" id="botao-adicionar-tarefa"><i class="fa-thin fa-plus"></i></button>
                     </form>
-
                 </div>
+                
+                <hr>
 
-                <div class="filtrar">
-
-                    <form class="formulario-filtrar">
-                        <label for="ifiltrar">Fitrar:</label> <br>
-                        <select name="select-filtrar" id="iselect-filtrar">
-                            <option value="todos">Todos</option>
-                            <option value="feitos">Feitos</option>
-                            <option value="fazer">A Fazer</option>
-                        </select>
-                    </form>
-
+                <div class="editar-tarefa-pai d-none">
+                    <div class="editar-tarefa ">
+                        <form class="formulario-editar-tarefa">
+                            <label for="itarefa">Editar:</label> <br>
+                            <input type="text" name="editar" id="ieditar">
+                            <button type="submit"><i class="fa-solid fa-check-double"></i></button>
+                            <br>
+                            <button type="" class="botao-cancelar">Cancelar</button>
+                        </form>
+                    </div>
+                    <hr>
+                </div>
+                <div class="pesquisar-filtrar d-flex">
+                    <div class="pesquisar">
+                        <form class="formulario-pesquisar">
+                            <label for="ipesquisar">Pesquisar:</label> <br>
+                            <input type="text" name="buscar" id="ibuscar" placeholder="Buscar...">
+                            <button type="submit"><i class="fa-solid fa-delete-left"></i></button>
+                        </form>
+                    </div>
+                    <hr>
+                    <hr class="linha-pesquisar-filtrar">
+                    <div class="filtrar">
+                        <form class="formulario-filtrar">
+                            <label for="ifiltrar">Fitrar:</label> <br>
+                            <select name="select-filtrar" id="iselect-filtrar">
+                                <option value="todos">Todos</option>
+                                <option value="feitos">Feitos</option>
+                                <option value="fazer">A Fazer</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <div class="lista-de-tarefas">
+                    <div class="tarefa-pai tarefa-feita-pai">
+                        <div class="tarefa-filho tarefa-feita d-flex m-3">
+                            <p>Ir ao mercado</p>
+                            <div class="botoes-editar-feito-limpar">
+                                <button class="finish">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                                <button class="editar">
+                                    <i class="fa-solid fa-edit"></i>
+                                </button>
+                                <button class="apagar">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="tarefa-pai">
+                        <div class="tarefa-filho d-flex m-3">
+                            <p>Estudar</p>
+                            <div class="botoes-editar-feito-limpar">
+                                <button class="finish">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                                <button class="editar">
+                                    <i class="fa-solid fa-edit"></i>
+                                </button>
+                                <button class="apagar">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="tarefa-pai">
+                        <div class="tarefa-filho d-flex m-3">
+                            <p>Estudar</p>
+                            <div class="botoes-editar-feito-limpar">
+                                <button class="finish">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                                <button class="editar">
+                                    <i class="fa-solid fa-edit"></i>
+                                </button>
+                                <button class="apagar">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
                 </div>
             </div>
-             
-            <hr>
 
-            <div class="lista-de-tarefas">
-                <div class="tarefa">
-                    
-                    <p>Ir ao mercado</p>
-                    <button class="finish">
-                        <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button class="editar">
-                        <i class="fa-solid fa-edit"></i>
-                    </button>
-                    <button class="apagar">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                
-                </div>
-
-                <div class="tarefa">
-                    
-                    <p>Ir ao mercado</p>
-                    <button class="finish">
-                        <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button class="editar">
-                        <i class="fa-solid fa-edit"></i>
-                    </button>
-                    <button class="apagar">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                
-                </div>
-            </div>
-            
         </section>
     </main>
-    
+
 </body>
+
 </html>

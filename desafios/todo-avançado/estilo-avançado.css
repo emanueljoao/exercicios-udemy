@@ -57,7 +57,6 @@ p{
     justify-content: space-between;
     padding-top: 25px;
 }
-/* background-color: rgb(57, 82, 105); */
 
 .tarefa-feita-pai{
     background-color: rgb(57, 82, 105);
@@ -68,7 +67,13 @@ p{
     text-decoration: line-through;
 }
 
+.botoes-editar-feito-limpar {
+    display: flex;
+    height: 32px;
+    column-gap: 5px;
+}
+
 button:hover{
-    background-color: rgba(57, 82, 105, 0.755);
+    background-color: #132f5d;
     transition: 2s;
 }
